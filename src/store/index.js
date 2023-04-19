@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { phrasesReducer } from "./slices/phrases";
+import { text } from "./slices/text";
 
 
 export const store = configureStore({
   reducer: {
-    phrasesReducer,
+    text,
     
   },
 });

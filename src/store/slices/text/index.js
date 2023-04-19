@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const phrasesSlice = createSlice({
-  name: "phrases",
+export const textSlice = createSlice({
+  name: "text",
   initialState: {
-    list: "",
+    text: "",
   },
   reducers: {
-    setPhraseList: (state, action) => {
-      state.list = action.payload;
+    setText: (state, action) => {
+      state.text = action.payload;
     },
   },
 });
-export const { setPhraseList } = phrasesSlice.actions;
+export const { setText } = textSlice.actions;
 
-export const phrasesReducer = phrasesSlice.reducer;
+export const text = textSlice.reducer;
 
-export const fetchAllPhrases = () => async (dispatch) => {
+/* export const fetchAllPhrases = () => async (dispatch) => {
   const response = await fetch(
     "https://programming-quotesapi.vercel.app/api/random"
   );
@@ -25,3 +25,4 @@ export const fetchAllPhrases = () => async (dispatch) => {
   console.log(dataJson);
   dispatch(setPhraseList(dataJson));
 };
+ */
