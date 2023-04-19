@@ -15,6 +15,10 @@ export const { setText } = textSlice.actions;
 
 export const text = textSlice.reducer;
 
+export const setTextValue=(text)=>(dispatch) =>{
+  dispatch(setText(text))
+}
+
 /* export const fetchAllPhrases = () => async (dispatch) => {
   const response = await fetch(
     "https://programming-quotesapi.vercel.app/api/random"
