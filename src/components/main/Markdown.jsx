@@ -1,15 +1,17 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux"
-import { useEffect, useState } from "react";
-const value= useSelector((state) => state.text.text)
-const [convertedValue,setConvertedValue] =useState("")
-useEffect(()=>{
-setConvertedValue(value)
-},[value])
+import { useSelector } from "react-redux"
+import { useEffect } from "react";
+import {marked} from "marked"
 export const Markdown = () => {
+  const value= useSelector((state) => state.text.text)
+ 
+  useEffect(()=>{
+  document.getElementById("markdown").innerHTML= marked(value)
+  },[value])
+  
   return (
     <>
-      <div className="markdown">{convertedValue}</div>
+      <div className="markdown" id="markdown"></div>
     </>
   );
 };
