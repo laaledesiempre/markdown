@@ -1,7 +1,28 @@
+body{
+    background-color: rgb(248, 61, 61);
+}
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
     gap: 2rem;
+}
+textarea{
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 33rem;
+    resize: vertical;
+}
+textarea:focus{
+    outline: none !important;
+}
+.markdown{
+    background-color: rgb(246, 142, 142);
+    padding: 1.25rem 2rem;
+    border-radius: 1rem;
+    width: 40rem;
+    resize: vertical;
+    overflow:auto;
 }

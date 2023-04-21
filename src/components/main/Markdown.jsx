@@ -4,14 +4,12 @@ import { useEffect } from "react";
 import {marked} from "marked"
 export const Markdown = () => {
   const value= useSelector((state) => state.text.text)
- 
   useEffect(()=>{
-  document.getElementById("markdown").innerHTML= marked(value)
+  document.getElementById("preview").innerHTML= marked(value)
   },[value])
-  
   return (
     <>
-      <div className="markdown" id="markdown"></div>
+      <div className="markdown" id="preview"></div>
     </>
   );
 };

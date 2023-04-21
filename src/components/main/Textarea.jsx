@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import {setTextValue} from "../../store/slices/text"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 
 export const Textarea = () => {
-  const [textArea,setTextArea] = useState("")
+  const values= useSelector((state) => state.text.text)
+  const [textArea,setTextArea] = useState(values)
   const dispatch = useDispatch();
   const changeHandler=(e)=>{
     setTextArea(e.target.value)
@@ -16,7 +17,7 @@ export const Textarea = () => {
   },[textArea])
   return (
     <>
-      <textarea name="" id="" cols="30" rows="10" onChange={changeHandler}></textarea>
+      <textarea autoComplete="false" id="editor" cols="50" rows="15" defaultValue={values} onChange={changeHandler}></textarea>
     </>
   );
 };
